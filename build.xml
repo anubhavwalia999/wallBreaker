@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="wallBreaker">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse/java-2019-06/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="12"/>
+    <property name="source" value="12"/>
+    <path id="wallBreaker.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <path id="run.GFG.classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <path id="run.main.classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <path id="run.mainClass (1).classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <path id="run.mainClass.classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <path id="run.MainLinkedList.classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <path id="run.mainQ.classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <path id="run.MainS.classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <path id="run.mainset.classpath">
+        <path refid="wallBreaker.classpath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="wallBreaker.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="GFG">
+        <java classname="linkedlist.GFG" failonerror="true" fork="yes">
+            <classpath refid="run.GFG.classpath"/>
+        </java>
+    </target>
+    <target name="main">
+        <java classname="wallBreaker.main" failonerror="true" fork="yes">
+            <classpath refid="run.main.classpath"/>
+        </java>
+    </target>
+    <target name="mainClass (1)">
+        <java classname="maps.mainClass" failonerror="true" fork="yes">
+            <classpath refid="run.mainClass (1).classpath"/>
+        </java>
+    </target>
+    <target name="mainClass">
+        <java classname="comparables.Mainclass" failonerror="true" fork="yes">
+            <classpath refid="run.mainClass.classpath"/>
+        </java>
+    </target>
+    <target name="MainLinkedList">
+        <java classname="linkedlist.MainLinkedList" failonerror="true" fork="yes">
+            <classpath refid="run.MainLinkedList.classpath"/>
+        </java>
+    </target>
+    <target name="mainQ">
+        <java classname="queue.mainQ" failonerror="true" fork="yes">
+            <classpath refid="run.mainQ.classpath"/>
+        </java>
+    </target>
+    <target name="MainS">
+        <java classname="stacks.MainS" failonerror="true" fork="yes">
+            <classpath refid="run.MainS.classpath"/>
+        </java>
+    </target>
+    <target name="mainset">
+        <java classname="sets.mainset" failonerror="true" fork="yes">
+            <classpath refid="run.mainset.classpath"/>
+        </java>
+    </target>
+</project>
